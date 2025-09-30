@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Wellness Check-In Module: An Illustrated Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind gray-50 */
+        }
+        .section-title {
+            @apply text-3xl font-bold text-slate-800 text-center mb-4;
+        }
+        .section-subtitle {
+            @apply text-lg text-slate-600 text-center mb-12 max-w-2xl mx-auto;
+        }
+        .card {
+            @apply bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300;
+        }
+        .illustration {
+            @apply w-full h-56 object-cover bg-slate-200;
+        }
+        .pulse-animation {
+            animation: pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.9;
+                transform: scale(1.02);
+            }
+        }
+
+        /* Styles for the interactive mobile demo */
+        .step {
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotateZ(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(600px) rotateZ(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-slate-800">Wellness Module Design - Thence </h1>
+            <span class="text-sm font-medium text-teal-600">Benadin Benny</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">A Visual Guide to the Daily Wellness Check-In</h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto">Transforming a detailed product report into an easy-to-understand visual storyboard.</p>
+        </section>
+
+        <!-- Core Philosophy Section -->
+        <section class="mb-20">
+            <h3 class="section-title">The Core Philosophy</h3>
+            <p class="section-subtitle">A quick, personalized "pulse check" that feels rewarding, not like a chore. Designed to be lightweight, adaptive, and habit-forming.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Lightweight -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+                    <div class="bg-teal-100 p-4 rounded-full mb-4">
+                        <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="font-semibold text-lg text-slate-800 mb-2">&lt; 60 Seconds</h4>
+                    <p class="text-slate-600 text-sm">Fast and frictionless, respecting the user's time.</p>
+                </div>
+                <!-- Card 2: Adaptive -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+                    <div class="bg-sky-100 p-4 rounded-full mb-4">
+                        <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <h4 class="font-semibold text-lg text-slate-800 mb-2">Personalized</h4>
+                    <p class="text-slate-600 text-sm">Intelligently tailors questions to each user's persona.</p>
+                </div>
+                <!-- Card 3: Rewarding -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+                     <div class="bg-amber-100 p-4 rounded-full mb-4">
+                        <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-12v4m-2-2h4m5 10v4m-2-2h4M17 3a2 2 0 00-2 2v1m-2-2a2 2 0 00-2 2v1m-2-2a2 2 0 00-2 2v1m16 9a2 2 0 002-2v-1m2 2a2 2 0 002-2v-1m2 2a2 2 0 002-2v-1M4 9a2 2 0 00-2 2v1m2-2a2 2 0 00-2 2v1m2-2a2 2 0 00-2 2v1"></path></svg>
+                    </div>
+                    <h4 class="font-semibold text-lg text-slate-800 mb-2">Micro-Rewards</h4>
+                    <p class="text-slate-600 text-sm">Builds positive habit loops with streaks and celebrations.</p>
+                </div>
+                 <!-- Card 4: Gentle Nudges -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+                    <div class="bg-violet-100 p-4 rounded-full mb-4">
+                       <svg class="w-8 h-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    </div>
+                    <h4 class="font-semibold text-lg text-slate-800 mb-2">Gentle Nudges</h4>
+                    <p class="text-slate-600 text-sm">Reminds users without creating pressure or guilt.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Journey Section -->
+        <section class="mb-20">
+            <h3 class="section-title">The 6-Tap User Journey</h3>
+            <p class="section-subtitle">This simple, linear flow adapts to each user's persona, taking them from entry to reward in under a minute. Try the interactive demo below to experience it firsthand!</p>
+            
+            <!-- Listed Steps -->
+            <div class="max-w-4xl mx-auto mb-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                    <div>
+                        <h4 class="font-semibold text-slate-800">Entry Trigger</h4>
+                        <p class="text-slate-600">A welcoming prompt appears on the dashboard to invite the user.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                    <div>
+                        <h4 class="font-semibold text-slate-800">Mood Snapshot</h4>
+                        <p class="text-slate-600">The user captures their mood with a single tap on an emoji wheel.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                    <div>
+                        <h4 class="font-semibold text-slate-800">Tailored Questions</h4>
+                        <p class="text-slate-600">1-2 questions adapt to the user's specific wellness focus.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold">4</div>
+                    <div>
+                        <h4 class="font-semibold text-slate-800">Reflection & Insight</h4>
+                        <p class="text-slate-600">An auto-generated insight helps connect the dots in their journey.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold">5</div>
+                    <div>
+                        <h4 class="font-semibold text-slate-800">Close & Reward</h4>
+                        <p class="text-slate-600">A celebratory screen reinforces the habit and shows streak progress.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold">6</div>
+                    <div>
+                        <h4 class="font-semibold text-slate-800">Save & Share</h4>
+                        <p class="text-slate-600">The entry is saved, with options to share a "win" or sync with a buddy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="interactive-journey" class="max-w-sm mx-auto bg-slate-800 rounded-[40px] p-4 shadow-2xl border-4 border-slate-600">
+                <div class="w-full h-[600px] bg-white rounded-[30px] overflow-hidden relative flex flex-col font-sans">
+                    <!-- Screen Content -->
+                    <div id="screen-content" class="flex-grow relative overflow-hidden">
+                        <!-- Step 1: Entry -->
+                        <div data-step="1" class="step absolute inset-0 bg-slate-50 p-8 flex flex-col justify-between items-center text-center opacity-100">
+                            <!-- Annotation for Step 1 -->
+                            <div class="absolute bottom-32 -right-12 w-48 text-left hidden md:block animate-pulse" style="animation-duration: 3s;">
+                                <div class="bg-white/80 backdrop-blur-sm border-2 border-orange-400 rounded-lg p-2 shadow-lg transform -rotate-6">
+                                    <p class="text-orange-600 font-bold text-center">Click to Begin!</p>
+                                </div>
+                                <svg viewBox="0 0 100 100" class="text-orange-400 -mt-5 ml-4 h-16 w-16">
+                                    <path d="M20,80 C30,30 70,30 90,5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                    <path d="M85 0 L 95 10 M 85 10 L 95 0" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-grow flex flex-col justify-center items-center">
+                                <div class="text-6xl mb-6 pulse-animation">👋</div>
+                                <h4 class="text-2xl font-bold text-slate-800">How's your day shaping up, Alex?</h4>
+                                <p class="text-slate-500 mt-2">Quick 60s check-in to celebrate your wins!</p>
+                            </div>
+                            <button data-next="2" class="w-full bg-teal-600 text-white font-bold py-4 rounded-xl hover:bg-teal-700 transition-colors">START</button>
+                             <div class="mt-4 text-sm text-slate-500 font-medium">Streak: 4 days 🔥</div>
+                        </div>
+
+                        <!-- Step 2: Mood -->
+                        <div data-step="2" class="step absolute inset-0 bg-slate-50 p-6 flex flex-col justify-between items-center text-center opacity-0 hidden">
+                            <!-- Annotation for Step 2 -->
+                            <div class="absolute top-20 -right-12 w-48 text-left hidden md:block animate-pulse" style="animation-duration: 3s;">
+                                <div class="bg-white/80 backdrop-blur-sm border-2 border-orange-400 rounded-lg p-2 shadow-lg transform rotate-6">
+                                    <p class="text-orange-600 font-bold text-center">Tap an emoji</p>
+                                </div>
+                                <svg viewBox="0 0 100 100" class="text-orange-400 -mt-4 ml-8 h-16 w-16">
+                                    <path d="M20,5 C30,40 70,60 90,80" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                    <path d="M85 75 L 95 85 M 85 85 L 95 75" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-800 w-full">Pick your vibe today:</h4>
+                            <div class="grid grid-cols-4 gap-4 my-auto">
+                                <div class="emoji-option text-5xl p-2 rounded-full cursor-pointer transition-transform transform hover:scale-110">😊</div>
+                                <div class="emoji-option text-5xl p-2 rounded-full cursor-pointer transition-transform transform hover:scale-110">😌</div>
+                                <div class="emoji-option text-5xl p-2 rounded-full cursor-pointer transition-transform transform hover:scale-110">😠</div>
+                                <div class="emoji-option text-5xl p-2 rounded-full cursor-pointer transition-transform transform hover:scale-110">😴</div>
+                                <div class="emoji-option text-5xl p-2 rounded-full cursor-pointer transition-transform transform hover:scale-110">😎</div>
+                                <div class="emoji-option text-5xl p-2 rounded-full cursor-pointer transition-transform transform hover:scale-110">🤯</div>
+                                <div class="emoji-option text-5xl p-2 rounded-full cursor-pointer transition-transform transform hover:scale-110">❤️</div>
+                                <div class="emoji-option text-5xl p-2 rounded-full cursor-pointer transition-transform transform hover:scale-110">😐</div>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-4">This sets the tone for your tips.</p>
+                            <button data-next="3" disabled class="next-button w-full bg-slate-300 text-white font-bold py-4 rounded-xl transition-colors cursor-not-allowed">Next</button>
+                        </div>
+                        
+                        <!-- Step 3: Tailored Questions (Fitness Persona) -->
+                        <div data-step="3" class="step absolute inset-0 bg-slate-50 p-6 flex flex-col justify-between opacity-0 hidden">
+                             <!-- Annotation for Step 3 -->
+                            <div class="absolute top-1/2 -mt-12 -right-16 w-48 text-left hidden md:block animate-pulse" style="animation-duration: 3s;">
+                                 <div class="bg-white/80 backdrop-blur-sm border-2 border-orange-400 rounded-lg p-2 shadow-lg transform -rotate-6">
+                                    <p class="text-orange-600 font-bold text-center">Choose an option</p>
+                                </div>
+                                <svg viewBox="0 0 100 100" class="text-orange-400 -mt-4 ml-4 h-16 w-16">
+                                    <path d="M10,50 C30,20 60,20 80,50" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                    <path d="M75 45 L 85 55 M 75 55 L 85 45" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                </svg>
+                            </div>
+                             <h4 class="text-xl font-bold text-slate-800 text-center mb-4">How'd you move today?</h4>
+                             <div class="flex-grow space-y-4">
+                                <div class="bg-teal-50 border border-teal-200 rounded-lg p-4 text-center">
+                                    <p class="font-bold text-teal-700">8.2k steps detected</p>
+                                    <p class="text-xs text-teal-600">Auto-synced from wearable</p>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <button class="bg-white border border-slate-300 rounded-lg p-4 hover:bg-slate-100">Walk/Run</button>
+                                    <button class="bg-white border border-slate-300 rounded-lg p-4 hover:bg-slate-100">Gym Session</button>
+                                    <button class="bg-white border border-slate-300 rounded-lg p-4 hover:bg-slate-100">Rest Day</button>
+                                    <button class="bg-white border border-slate-300 rounded-lg p-4 hover:bg-slate-100">Other</button>
+                                </div>
+                             </div>
+                             <button data-next="4" class="w-full bg-teal-600 text-white font-bold py-4 rounded-xl hover:bg-teal-700 transition-colors mt-6">Next</button>
+                        </div>
+                        
+                        <!-- Step 4: Insight -->
+                        <div data-step="4" class="step absolute inset-0 bg-slate-50 p-8 flex flex-col justify-between items-center text-center opacity-0 hidden">
+                            <!-- Annotation for Step 4 -->
+                            <div class="absolute bottom-32 -right-12 w-48 text-left hidden md:block animate-pulse" style="animation-duration: 3s;">
+                                <div class="bg-white/80 backdrop-blur-sm border-2 border-orange-400 rounded-lg p-2 shadow-lg transform -rotate-6">
+                                    <p class="text-orange-600 font-bold text-center">Tap to finish</p>
+                                </div>
+                                <svg viewBox="0 0 100 100" class="text-orange-400 -mt-5 ml-4 h-16 w-16">
+                                    <path d="M20,80 C30,30 70,30 90,5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                    <path d="M85 0 L 95 10 M 85 10 L 95 0" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-grow flex flex-col justify-center items-center">
+                                <div class="text-5xl mb-6">💡</div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Your quick insight:</h4>
+                                <p class="text-slate-600 bg-sky-100 border border-sky-200 rounded-lg p-4">"Energy's up from last week—your yoga's paying off! Try a PM stretch?"</p>
+                                <p class="text-xs text-slate-400 mt-8 mb-2">Did you find this helpful?</p>
+                                <div class="flex space-x-4">
+                                    <button class="text-4xl p-2 rounded-full hover:bg-slate-200 transition">👍</button>
+                                    <button class="text-4xl p-2 rounded-full hover:bg-slate-200 transition">👎</button>
+                                </div>
+                            </div>
+                            <button data-next="5" class="w-full bg-teal-600 text-white font-bold py-4 rounded-xl hover:bg-teal-700 transition-colors">Done</button>
+                        </div>
+
+                        <!-- Step 5: Reward -->
+                        <div data-step="5" class="step absolute inset-0 bg-teal-600 p-8 flex flex-col justify-center items-center text-center opacity-0 hidden">
+                             <!-- Annotation for Step 5 -->
+                            <div class="absolute top-1/2 -mt-16 -right-16 w-48 text-left hidden md:block animate-pulse" style="animation-duration: 3s;">
+                                <div class="bg-slate-900/60 backdrop-blur-sm border-2 border-amber-300 rounded-lg p-2 shadow-lg transform -rotate-6">
+                                    <p class="text-amber-300 font-bold text-center">One more tap!</p>
+                                </div>
+                                <svg viewBox="0 0 100 100" class="text-amber-300 -mt-4 ml-4 h-16 w-16">
+                                    <path d="M10,50 C30,20 60,20 80,50" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                    <path d="M75 45 L 85 55 M 75 55 L 85 45" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                </svg>
+                            </div>
+                             <div id="confetti-container" class="absolute inset-0"></div>
+                             <h4 class="text-4xl font-extrabold text-white">All set!</h4>
+                             <p class="text-amber-300 text-xl font-bold mt-4 animate-bounce">Streak: 5 days 🔥</p>
+                             <button data-next="6" class="mt-12 w-full bg-white text-teal-700 font-bold py-4 rounded-xl hover:bg-slate-100 transition-colors">Continue</button>
+                        </div>
+                        
+                        <!-- Step 6: Save & Share -->
+                        <div data-step="6" class="step absolute inset-0 bg-slate-50 p-8 flex flex-col justify-center items-center text-center opacity-0 hidden">
+                            <!-- Annotation for Step 6 -->
+                            <div class="absolute bottom-20 -left-12 w-48 text-right hidden md:block animate-pulse" style="animation-duration: 3s;">
+                                <div class="bg-white/80 backdrop-blur-sm border-2 border-orange-400 rounded-lg p-2 shadow-lg transform rotate-6">
+                                    <p class="text-orange-600 font-bold text-center">Restart the demo</p>
+                                </div>
+                                <svg viewBox="0 0 100 100" class="text-orange-400 -mt-4 mr-4 h-16 w-16 ml-auto transform -scale-x-100">
+                                    <path d="M20,80 C30,30 70,30 90,5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                    <path d="M85 0 L 95 10 M 85 10 L 95 0" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+                                </svg>
+                            </div>
+                            <div class="text-5xl mb-6">✅</div>
+                            <h4 class="text-2xl font-bold text-slate-800">Saved to Journal</h4>
+                            <p class="text-slate-500 mt-2 mb-8">Great job today, Alex!</p>
+                            <div class="w-full space-y-3">
+                                <button class="w-full bg-sky-500 text-white font-bold py-3 rounded-xl hover:bg-sky-600">Share Win</button>
+                                <button class="w-full bg-violet-500 text-white font-bold py-3 rounded-xl hover:bg-violet-600">Buddy Sync</button>
+                                <button data-next="1" class="w-full text-slate-500 font-medium py-3 rounded-xl hover:bg-slate-200 mt-4">Start Over</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div id="progress-bar-container" class="py-4 px-8 bg-white border-t border-slate-200 hidden">
+                        <div class="flex justify-between items-center w-20 mx-auto">
+                           <div class="progress-dot w-2 h-2 bg-slate-300 rounded-full"></div>
+                           <div class="progress-dot w-2 h-2 bg-slate-300 rounded-full"></div>
+                           <div class="progress-dot w-2 h-2 bg-slate-300 rounded-full"></div>
+                           <div class="progress-dot w-2 h-2 bg-slate-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Unique Ideas Section -->
+        <section>
+            <h3 class="section-title">Engaging & Unique Ideas</h3>
+            <p class="section-subtitle">Four innovative features designed to make the module delightful, sticky, and highly retentive, all feasible with standard mobile development.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Idea 1: Echo Backstreaks -->
+                <div class="card">
+                    <img src="https://placehold.co/600x400/EDE7F6/311B92?text=Echo+Backstreaks" alt="Echo Backstreaks Illustration" class="illustration">
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl mb-2 text-slate-800">Echo Backstreaks</h4>
+                        <p class="text-slate-600">Visualize progress as a growing "echo" waveform. Tapping it gives a 3s audio recap, making progress feel more tangible.</p>
+                    </div>
+                </div>
+                <!-- Idea 2: Win Weaver -->
+                <div class="card">
+                    <img src="https://placehold.co/600x400/EDE7F6/311B92?text=Win+Weaver" alt="Win Weaver Illustration" class="illustration">
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl mb-2 text-slate-800">Win Weaver</h4>
+                        <p class="text-slate-600">Automatically combines daily inputs into a beautiful, shareable image card for social media, boosting organic growth.</p>
+                    </div>
+                </div>
+                <!-- Idea 3: Phantom Prompts -->
+                <div class="card">
+                    <img src="https://placehold.co/600x400/EDE7F6/311B92?text=Phantom+Prompts" alt="Phantom Prompts Illustration" class="illustration">
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl mb-2 text-slate-800">Phantom Prompts</h4>
+                        <p class="text-slate-600">Uses AR to offer an immersive, 10-second breathing exercise via the phone's camera when high stress is detected.</p>
+                    </div>
+                </div>
+                <!-- Idea 4: Buddy Sync -->
+                <div class="card">
+                    <img src="https://placehold.co/600x400/EDE7F6/311B92?text=Buddy+Sync" alt="Buddy Sync Illustration" class="illustration">
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl mb-2 text-slate-800">Buddy Sync</h4>
+                        <p class="text-slate-600">Creates gentle accountability by letting users share anonymized progress with an opt-in wellness buddy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white mt-20">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 Benadin Benny.</p>
+            <p class="text-sm text-slate-400 mt-2">Assignment for the Associate Product Consultant Role – Thence.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const journeyContainer = document.getElementById('interactive-journey');
+            if (!journeyContainer) return;
+
+            const steps = journeyContainer.querySelectorAll('.step');
+            const nextButtons = journeyContainer.querySelectorAll('[data-next]');
+            const progressBarContainer = document.getElementById('progress-bar-container');
+            const progressBarDots = progressBarContainer.querySelectorAll('.progress-dot');
+            const confettiContainer = document.getElementById('confetti-container');
+
+            const showStep = (stepNumber) => {
+                steps.forEach(step => {
+                    step.classList.add('opacity-0', 'hidden');
+                });
+
+                const targetStep = journeyContainer.querySelector(`[data-step="${stepNumber}"]`);
+                if (targetStep) {
+                    targetStep.classList.remove('hidden');
+                    setTimeout(() => targetStep.classList.remove('opacity-0'), 10);
+                }
+
+                if (stepNumber >= 2 && stepNumber <= 4) {
+                    progressBarContainer.classList.remove('hidden');
+                    progressBarDots.forEach((dot, index) => {
+                        if (index < stepNumber - 1) {
+                            dot.classList.add('bg-teal-500');
+                            dot.classList.remove('bg-slate-300');
+                        } else {
+                            dot.classList.remove('bg-teal-500');
+                            dot.classList.add('bg-slate-300');
+                        }
+                    });
+                } else {
+                    progressBarContainer.classList.add('hidden');
+                }
+                
+                if (stepNumber === 5) {
+                    triggerConfetti();
+                } else {
+                    confettiContainer.innerHTML = '';
+                }
+            };
+            
+            const triggerConfetti = () => {
+                confettiContainer.innerHTML = '';
+                const colors = ['#fde68a', '#fca5a5', '#86efac', '#93c5fd'];
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = `${Math.random() * 2}s`;
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    confettiContainer.appendChild(confetti);
+                }
+            }
+
+            nextButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const nextStep = parseInt(button.dataset.next);
+                    showStep(nextStep);
+                });
+            });
+
+            const emojiOptions = journeyContainer.querySelectorAll('.emoji-option');
+            const step2NextButton = journeyContainer.querySelector('[data-step="2"] .next-button');
+            emojiOptions.forEach(emoji => {
+                emoji.addEventListener('click', () => {
+                    emojiOptions.forEach(e => e.classList.remove('ring-4', 'ring-teal-400', 'scale-125', 'bg-teal-100'));
+                    emoji.classList.add('ring-4', 'ring-teal-400', 'scale-125', 'bg-teal-100');
+                    step2NextButton.disabled = false;
+                    step2NextButton.classList.remove('bg-slate-300', 'cursor-not-allowed');
+                    step2NextButton.classList.add('bg-teal-600', 'hover:bg-teal-700');
+                });
+            });
+            
+            showStep(1); // Initialize
+        });
+    </script>
+</body>
+</html>
+
+
+
+
